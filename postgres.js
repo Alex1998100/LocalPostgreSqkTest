@@ -34,9 +34,12 @@ export async function Select(client, select, selectCallback) {
   });
 }
 
-export async function Insert(client, insert, insertCallback) {
+let iCallback = async (result, sql) => {
+  console.log(result, sql);
+};
+export async function Insert(client, insert, insertCallback=iCallback) {
   return await client.query(insert).then(async (x) => {
-    insertCallback(x.rowCount);
+    insertCallback(x.rowCount, insert);
   });
 }
 
