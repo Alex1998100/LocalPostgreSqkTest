@@ -2,7 +2,6 @@ import { anonFolderList } from "./anonFoldeList.js";
 import {} from "dotenv/config";
 import fs from "fs";
 import { Connect, disConnect, Select, Insert } from "./postgres.js";
-import pg from "pg";
 
 let db = Connect()
 
